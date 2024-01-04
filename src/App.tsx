@@ -42,7 +42,7 @@ const getWinner = (gameBoard: GameBoardType): GameBoardValue => {
 };
 
 const getGameBoard = (gameTurns: GameTurn[]) => {
-  const gameBoard = [...initalGameBoard.map((r) => [...r])] as GameBoardType;
+  const gameBoard = structuredClone(initalGameBoard) as GameBoardType;
 
   for (const turn of gameTurns) {
     const { square, player } = turn;
